@@ -1,5 +1,5 @@
 package br.dev.gustavo.tabuada.model;
-import br.dev.gustavo.tabuada.model.Menu;
+
 
 public class Tabuada {
 	private double multiplicando;
@@ -27,13 +27,13 @@ public class Tabuada {
 		this.maxMultiplicador = maxMultiplicador;
 	}
 
-	public double MaxMultiplicador() {
+	public double getMaxMultiplicador() {
 		return maxMultiplicador;
 	}
 
 	public void mostrarTabuada() {
 		
-		while (minMultiplicador <= maxMultiplicador + 1 ) {
+		while (minMultiplicador <= maxMultiplicador) {
 			double produto = multiplicando * minMultiplicador;
 			System.out.println(multiplicando + " X " + minMultiplicador + " = " + produto);
 			minMultiplicador = minMultiplicador + 1;

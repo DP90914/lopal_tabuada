@@ -1,18 +1,27 @@
 package br.dev.gustavo.tabuada.model;
+import br.dev.gustavo.tabuada.model.Tabuada;
 
 import java.util.Scanner;
 
 public class Menu {
 	public void criarMenu() {
 		Scanner leitor1 = new Scanner(System.in);
+		Tabuada t1 = new Tabuada();
 		
-		System.out.println("ESCOLHER MINIMO MULTIPLICADOR:");
-		double minMult = leitor1.nextInt();
+		System.out.print("ESCOLHER MINIMO MULTIPLICADOR:");
+		double minMultiplicando = leitor1.nextDouble();	
+		t1.setMinMultiplicador(minMultiplicando);
 
-		System.out.println("ESCOLHER MAXIMO MULTIPLICADOR:");
-		double maxMult = leitor1.nextInt();
+		System.out.print("ESCOLHER MAXIMO MULTIPLICADOR:");
+		double maxMultiplicador = leitor1.nextDouble();	
+		t1.setMaxMultiplicador(maxMultiplicador);
+
+		System.out.print("ESCOLHER MULTIPLICANDO:");
+		double multiplicando = leitor1.nextDouble();
+		t1.setMultiplicando(multiplicando);
 		
-		System.out.println("ESCOLHER MULTIPLICANDO:");
-		double Mult = leitor1.nextInt();
+		t1.mostrarTabuada();
+	}
 }
-}
+
+
