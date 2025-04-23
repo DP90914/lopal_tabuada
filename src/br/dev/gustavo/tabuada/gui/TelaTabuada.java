@@ -2,12 +2,9 @@ package br.dev.gustavo.tabuada.gui;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-
 import br.dev.gustavo.tabuada.model.Tabuada;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -15,7 +12,7 @@ import javax.swing.JList;
 
 public class TelaTabuada {
 	private JLabel labelMultiplicando;
-	private JLabel labelMinMultiplicando;
+private JLabel labelMinMultiplicando;
 	private JLabel labelMaxMultiplicando;
 	private JTextField textMultiplicando;
 	private JTextField textMinMultiplicando;
@@ -108,7 +105,8 @@ public class TelaTabuada {
 				double maxMultiplicandoDouble = Double.valueOf(maxMultiplicando);
 				tabuada.setMaxMultiplicador(maxMultiplicandoDouble);
 				
-				tabuada.mostrarTabuada();
+				String[] tabuadaResultado = tabuada.mostrarTabuada();				
+				listTabuada.setListData(tabuadaResultado);
 			}
 		});
 		
@@ -121,6 +119,8 @@ public class TelaTabuada {
 				textMinMultiplicando.setText("");
 				textMaxMultiplicando.setText("");
 				textMultiplicando.requestFocus();
+				
+				listTabuada.setListData(new String[0]);
 			}
 		});
 		
